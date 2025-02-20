@@ -6,22 +6,44 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate:postgres": "dotenv -e .env.local -- npx prisma migrate dev --name init",
+    "fetch:hn": "dotenv -e .env.local -- tsx scripts/fetchHNPosts.ts",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@ai-sdk/google": "^1.1.14",
+    "@ai-sdk/openai": "^1.1.11",
+    "@aws-sdk/client-s3": "^3.749.0",
+    "@prisma/client": "^6.3.1",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@tailwindcss/postcss": "^4.0.6",
+    "ai": "^4.1.41",
+    "axios": "^1.7.9",
+    "dotenv-cli": "^8.0.0",
+    "howler": "^2.2.4",
+    "lucide-react": "^0.475.0",
+    "metadata-scraper": "^0.2.61",
+    "music-metadata": "^10.9.0",
+    "next": "15.1.7",
+    "orate": "^1.0.41",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.6"
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
+    "@eslint/eslintrc": "^3",
+    "@types/howler": "^2.2.12",
+    "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^9",
-    "eslint-config-next": "15.1.6",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-next": "15.1.7",
+    "postcss": "^8.5.2",
+    "prisma": "^6.3.1",
+    "tailwindcss": "^4.0.6",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
   }
 }
