@@ -15,10 +15,18 @@ export function VoiceOver({ src, isMuted, onEnded }: VoiceOverProps) {
     const newSound = new Howl({
       src: [src],
       html5: true,
-      autoplay: true,
+      autoplay: false,
+      preload: true,
       rate: 1.35,
       onend: () => onEnded(),
+      onplayerror: function () {
+        newSound.once('unlock', function () {
+          newSound.play();
+        });
+      },
     });
+
+    newSound.play();
 
     return () => {
       if (newSound) newSound.unload();

@@ -21,7 +21,7 @@ const Slide = ({ post, currentSlide }: { post: IPost; currentSlide: number }) =>
     <>
       <div className="transition-all duration-500 ease-in-out absolute w-full px-2 translate-y-0 opacity-100">
         <div className="bg-black/20 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
-          <h3 className="text-2xl font-bold text-white mb-4 drop-shadow-lg">{text}</h3>
+          <h3 className="text-xl font-bold text-white mb-4 drop-shadow-lg">{text}</h3>
           <Link href={`https://news.ycombinator.com/item?id=${post.postId}`} target="_blank">
             <ExternalLink className="w-4 h-4 text-white" />
           </Link>
@@ -54,7 +54,7 @@ export function Post({
     const wordsInSlide = post.slides[currentSlide].split(' ').length;
     const timeout = setTimeout(() => {
       setCurrentSlide((prev) => (prev + 1) % post.slides.length);
-    }, (wordsInSlide / 5) * 1000);
+    }, (wordsInSlide / 3.8) * 1000);
 
     return () => clearTimeout(timeout);
   }, [isMuted, post.slides, currentSlide, isInViewPort]);
