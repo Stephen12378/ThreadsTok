@@ -66,7 +66,7 @@ export default function Scrollable({ posts }: { posts: IPost[] }) {
     <>
       <section
         ref={mainRef}
-        className="flex-1 z-10 border-4 border-blue-900 overflow-scroll snap-y snap-mandatory transition-all duration-700 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        className="flex-1 z-10 overflow-scroll snap-y snap-mandatory transition-all duration-700 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
       >
         {posts.map((post) => (
           <Post
