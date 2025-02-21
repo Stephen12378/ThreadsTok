@@ -40,6 +40,7 @@ export class PrismaDB {
     comments?: number;
     slides?: string[];
     voiceOver?: string;
+    createdAt?: Date | string;
   }): Promise<Post> {
     try {
       const post = await this.client.post.create({
@@ -54,6 +55,7 @@ export class PrismaDB {
           comments: data.comments || 0,
           slides: data.slides || [],
           voiceOver: data.voiceOver || '',
+          createdAt: data.createdAt || new Date(),
         },
       });
       return post;

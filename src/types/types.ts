@@ -29,7 +29,7 @@ export interface IPost {
   author: string;
   likes: number;
   comments: number;
-  createdAt: string;
+  createdAt: Date | string;
   slides: string[];
   voiceOver: string;
 }

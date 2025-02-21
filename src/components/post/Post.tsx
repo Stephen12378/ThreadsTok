@@ -6,11 +6,11 @@ import Link from 'next/link';
 
 const Author = ({ author, title }: { author: string; title: string }) => {
   return (
-    <div className="p-2 text-white pr-12 z-10 pt-16">
-      <div className="flex items-center gap-3 mb-3">
-        <h2 className="text-2xl font-bold drop-shadow-md">@{author}</h2>
+    <div className="p-2 text-white pr-12 z-10">
+      <div className="flex flex-col items-start">
+        <h2 className="text-xl font-bold drop-shadow-md">@{author}</h2>
+        <p className="text-md font-medium mb-2 drop-shadow-md">{title}</p>
       </div>
-      <p className="text-lg font-medium mb-2 drop-shadow-md">{title}</p>
     </div>
   );
 };
@@ -62,7 +62,7 @@ export function Post({
   const voiceOverSrc = `https://pub-4bb212bfbf654d618e2d56a7a84b9457.r2.dev/${post.voiceOver}/${currentSlide}.mp3`;
 
   return (
-    <div className={`snap-start h-full w-full relative pb-8 ${gradient}`}>
+    <div className={`snap-start h-full w-full relative pb-2 bg-gradient-to-br ${gradient}`}>
       <div className="flex flex-col h-full">
         <div className="flex-1 flex justify-center items-center">
           {isInViewPort && !isMuted && <VoiceOver src={voiceOverSrc} isMuted={isMuted} onEnded={handleAudioEnded} />}

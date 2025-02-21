@@ -58,7 +58,7 @@ export class HackerNews extends ISocial {
       author: data.author,
       likes: data.points || 0,
       comments: comments,
-      createdAt: new Date(data.created_at_i * 1000).toISOString(),
+      createdAt: new Date(data.created_at_i * 1000),
       systemPrompt: SUMMARIZE_HN_POST_SYSTEM_PROMPT,
       prompt,
     } as Partial<IPost> & { systemPrompt: string; prompt: string };

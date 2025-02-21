@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
-import { Menu } from '@/components/Menu';
+// import { Menu } from '@/components/Menu';
 
 import './globals.css';
 
@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${dmSans.variable} antialiased bg-black overflow-hidden`}>
         <div className="h-screen max-w-[420px] mx-auto">
           {children}
-          <Menu />
+          {/* <Menu /> */}
         </div>
       </body>
     </html>

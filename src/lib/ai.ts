@@ -32,7 +32,7 @@ export class AI {
     const randomVoice = voices[Math.floor(Math.random() * voices.length)] as SpeechCreateParams['voice'];
 
     return await speak({
-      model: OpenAITTS.tts('tts-1', randomVoice, { response_format: 'opus' }),
+      model: OpenAITTS.tts('tts-1', randomVoice, { response_format: 'mp3' }),
       prompt: text,
     });
   }
